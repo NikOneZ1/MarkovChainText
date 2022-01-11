@@ -3,6 +3,7 @@ import numpy as np
 
 def generate_text(init_text, words_number):
     split_text = init_text.split()
+
     def create_pairs(text):
         for i in range(len(text) - 1):
             yield text[i], text[i + 1]
