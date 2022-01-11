@@ -3,7 +3,6 @@ import numpy as np
 
 def generate_text(init_text, words_number):
     split_text = init_text.split()
-
     def create_pairs(text):
         for i in range(len(text) - 1):
             yield text[i], text[i + 1]
@@ -20,12 +19,17 @@ def generate_text(init_text, words_number):
 
     first_word = np.random.choice(split_text)
 
-    while first_word.islower():
+    k = 0
+    while first_word.islower() and k < len(split_text):
         first_word = np.random.choice(split_text)
+        k += 1
 
     chain = [first_word]
 
-    for i in range(words_number):
-        chain.append(np.random.choice(word_dict[chain[-1]]))
+    for i in range(int(words_number)):
+        next_words = word_dict.get(chain[-1], "")
+        while not next_words:
+            next_words = word_dict.get(np.random.choice(split_text), "")
+        chain.append(np.random.choice(next_words))
 
     return ' '.join(chain)
