@@ -7,3 +7,42 @@ p {
     font-size: 25px;
     line-height: 34px;
 }
+
+b {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 34px;
+}
+
+textarea {
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    background: #d0dfe8;
+    resize: none;
+}
+
+input {
+    border: none;
+    border-radius: 10px;
+    background: #d0dfe8;
+}
+
+.generated-text {
+    border: none;
+    border-radius: 10px;
+    background: #d0dfe8;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

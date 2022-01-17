@@ -31,13 +31,21 @@ export default function Home() {
     }
 
     return (
-        <div>
-            <form onSubmit={Submit}>
-                <p><textarea name='text' onChange={changeText}></textarea></p>
-                <p><input type='number' min="1" max="10000" onChange={changeWordsNumber}/></p>
-                <input className='btn btn-outline-dark' type='submit' value='submit'/>
-            </form>
-            {generatedText && <p>{generatedText}</p>}
+        <div className='row'>
+            <div className='mx-auto col col-xs-10 col-sm-10 col-md-10 col-lg-8'>
+                <h1 className='text-center'>Markov chain text generator</h1>
+                <br/>
+                <form onSubmit={Submit}>
+                    <b>Input text</b>
+                    <p><textarea name='text' onChange={changeText} rows="6" required></textarea></p>
+                    <b>Words number of generated text</b>
+                    <p><input type='number' min="1" max="10000" onChange={changeWordsNumber} required/></p>
+                    <input className='btn btn-outline-dark' type='submit' value='Generate text'/>
+                </form>
+                <br/>
+                <br/>
+                {generatedText && <div className='text-center'><h2>Generated text</h2><p className='generated-text'>{generatedText}</p></div>}
+            </div>
         </div>
     )
 }

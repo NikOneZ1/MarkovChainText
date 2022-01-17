@@ -21,7 +21,7 @@ def generate_text(init_text, words_number):
     first_word = np.random.choice(split_text)
 
     k = 0
-    while first_word.islower() and k <= len(split_text):
+    while first_word.islower() and k < len(split_text):
         first_word = split_text[k]
         k += 1
     if first_word.islower():
