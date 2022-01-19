@@ -47,7 +47,7 @@ export default function Home() {
                 <br/>
                 <form onSubmit={Submit}>
                     <b>Input text</b>
-                    <p><textarea name='text' value={text} onChange={changeText} rows="6" required></textarea></p>
+                    <p><textarea name='text' value={text} onChange={changeText} rows="15" required></textarea></p>
                     <b>Words number of generated text</b>
                     <p><input type='number' min="1" max="10000" onChange={changeWordsNumber} required/></p>
                     <input className='btn btn-outline-dark' type='submit' value='Generate text'/>
