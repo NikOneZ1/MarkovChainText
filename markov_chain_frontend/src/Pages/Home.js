@@ -42,7 +42,7 @@ export default function Home() {
 
     return (
         <div className='row'>
-            <div className='mx-auto col col-xs-10 col-sm-10 col-md-10 col-lg-8'>
+            <div className='mx-auto col col-xs-9 col-sm-9 col-md-9 col-lg-8'>
                 <h1 className='text-center'>Markov chain text generator</h1>
                 <br/>
                 <form onSubmit={Submit}>
@@ -56,12 +56,12 @@ export default function Home() {
                 <br/>
                 {generatedText && <div className='text-center'><h2>Generated text</h2><p className='generated-text'>{generatedText}</p></div>}
             </div>
-            <div className='mx-auto col col-xs-2 col-sm-2 col-md-2 col-lg-2'>
+            <div className='mx-auto col col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center'>
                 <h2>Preset Texts</h2>
                 {presetTexts && presetTexts.map(preset_text =>
-                    <div className='text-center' onClick={() => setText(preset_text.text)}>
-                        <h4>{preset_text.name}</h4>
-                        <p>{preset_text.text.slice(0, 100)}...</p>
+                    <div className='card text-center mt-3' onClick={() => setText(preset_text.text)}>
+                        <h4 className='card-title'>{preset_text.name}</h4>
+                        <p className='card-text ml-1 mr-1'>{preset_text.text.slice(0, 200)}...</p>
                     </div>
                 )}
             </div>
