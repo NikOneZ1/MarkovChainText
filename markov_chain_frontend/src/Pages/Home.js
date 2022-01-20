@@ -57,9 +57,11 @@ export default function Home() {
                 {generatedText && <div className='text-center'><h2>Generated text</h2><p className='generated-text'>{generatedText}</p></div>}
             </div>
             <div className='mx-auto col col-xs-3 col-sm-3 col-md-3 col-lg-3 text-center'>
-                <h2>Preset Texts</h2>
+                <h1>Preset Texts</h1>
+                <br/>
+                <br/>
                 {presetTexts && presetTexts.map(preset_text =>
-                    <div className='card text-center mt-3' onClick={() => setText(preset_text.text)}>
+                    <div className='card text-center mt-3 text-preset' onClick={() => setText(preset_text.text)}>
                         <h4 className='card-title'>{preset_text.name}</h4>
                         <p className='card-text ml-1 mr-1'>{preset_text.text.slice(0, 200)}...</p>
                     </div>

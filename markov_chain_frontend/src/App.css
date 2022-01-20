@@ -36,6 +36,10 @@ input {
     background: #d0dfe8;
 }
 
+.text-preset {
+    cursor: pointer;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
