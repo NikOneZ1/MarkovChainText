@@ -5,12 +5,15 @@ from rest_framework import status, generics
 from .utils import generate_text
 from .serializers import PresetTextSerializer
 from .models import PresetText
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
     return render(request, "build/index.html")
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class MarkovChainText(APIView):
     def post(self, request):
         text = request.data['text']

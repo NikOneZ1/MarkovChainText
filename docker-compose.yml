@@ -1,0 +1,22 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14.1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: "db"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+
+  web:
+    build: .
+    command: bash -c "cd markov_chain_frontend && yarn build && cd .. && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app/api
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+volumes:
+  postgres_data:
