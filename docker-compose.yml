@@ -11,7 +11,7 @@ services:
 
   web:
     build: .
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "cd markov_chain_frontend && yarn build && cd .. && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app/api
     ports:
