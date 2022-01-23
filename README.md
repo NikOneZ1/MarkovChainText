@@ -5,6 +5,19 @@ Website for generating text made with Django REST Framework and React.
 
 # How to install 
 ### Using docker
+Set setings for the postgresql database
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
+    }
+}
+```
+Run command
 ```
 docker-compose up
 ```
