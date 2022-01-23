@@ -4,6 +4,11 @@ Website for generating text made with Django REST Framework and React.
 ![](preview.png)
 
 # How to install 
+### Using docker
+```
+docker-compose up
+```
+### Using Python and Node.js
 Install all dependencies
 ```
 pip install -r requirements.txt
@@ -35,3 +40,4 @@ yarn build
 - Django REST Framework 3.13.1
 - PostgreSQL
 - React
+- Docker
